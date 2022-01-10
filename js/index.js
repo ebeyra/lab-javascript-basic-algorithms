@@ -64,9 +64,10 @@ let phraseToCheck = "A man, a plan, a canal, Panama!";
 let palindromeTest = "";
 
 for (let i = 0; i < phraseToCheck.length; i++) {
-  if (phraseToCheck[i] === " " || "!" || "?" || ",") {
+  if (phraseToCheck[i] === " " || phraseToCheck[i] === "!" || phraseToCheck[i] === "?" || phraseToCheck[i] === ",") {
     continue;
   }
+ 
   palindromeTest += phraseToCheck[i];
 }
 
@@ -74,6 +75,9 @@ let reversePalTest = "";
 for (let i = (palindromeTest.length - 1); i >= 0; i--) {
   reversePalTest += palindromeTest[i];
 }
+
+palindromeTest = palindromeTest.toUpperCase();
+reversePalTest = reversePalTest.toUpperCase();
 
 if (palindromeTest === reversePalTest) {
   console.log("It's a palindrome!");
